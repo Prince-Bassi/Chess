@@ -1,0 +1,24 @@
+* {box-sizing: border-box;}
+
+:root {
+       --boardSize: 500px;
+}
+
+.board {
+       width: var(--boardSize);
+       height: var(--boardSize);
+       display: flex;
+       flex-flow: column wrap;
+}
+
+.board > div {
+       display: flex;
+       flex-flow: row nowrap;
+}
+
+.board .square {
+       background: pink;
+       border: 1px solid black;
+       width: calc(var(--boardSize) / 8);
+       height: calc(var(--boardSize) / 8);
+}
