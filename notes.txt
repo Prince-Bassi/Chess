@@ -1,0 +1,18 @@
+Piece object- It will have its own color, its own type like bishop or king. It will have a function to 
+calculate what squares it can go to. Which means i would need to access the nearby squares to the square of the piece.
+like in the knight's moves. That could be done since i have the row elements like a, b, c. The killing function
+can probably be handled in the square object. For the king, i would need to find out when its about to be killed.
+though, i have to figure out a lot before that so leave it.
+
+Square object- It will handle clicks of course. Its states can be 'selected' or not to see if we are clicking to
+move a piece or to access one. If its not already selected, its for selecting a piece, if its already selected, its for
+moving a piece. Esc key would de-select all but thats a function of the game object.
+
+So, i could make use of Piece objects which would control how the squares are selected since different pieces
+would select different squares. So when the square is clicked, it will trigger the function of its piece to send the
+main game object a signal to select the squares that it calculated according to its type of piece. Then the squares 
+will light up to indicate selection and in the Square object, if a square is clicked while its been selected, it will
+send the selected squared which would be stored in the main game object to and move the piece from it to itself.
+the selected square's piece will be empty and it would be de-selected. Now here, we can handle the killing function
+if the square which has been cliked had a piece on it, that piece will die and the selected square's piece will
+take its place.
